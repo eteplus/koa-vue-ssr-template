@@ -1,2 +1,1 @@
-* linguist-vendored
-*.css linguist-vendored=false
+*.css linguist-language=false
