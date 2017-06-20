@@ -1838,11 +1838,10 @@ eslint-import-resolver-webpack@^0.8.1:
     resolve "^1.2.0"
     semver "^5.3.0"
 
-eslint-loader@^1.7.1:
-  version "1.7.1"
-  resolved "http://registry.npm.taobao.org/eslint-loader/download/eslint-loader-1.7.1.tgz#50b158dd6272dcefb97e984254837f81a5802ce0"
+eslint-loader@^1.8.0:
+  version "1.8.0"
+  resolved "http://registry.npm.taobao.org/eslint-loader/download/eslint-loader-1.8.0.tgz#8261f08cca4bd2ea263b77733e93cf0f21e20aa9"
   dependencies:
-    find-cache-dir "^0.1.1"
     loader-fs-cache "^1.0.0"
     loader-utils "^1.0.2"
     object-assign "^4.0.1"
@@ -2907,9 +2906,9 @@ koa-is-json@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/koa-is-json/download/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
 
-koa-router@^7.2.0:
-  version "7.2.0"
-  resolved "http://registry.npm.taobao.org/koa-router/download/koa-router-7.2.0.tgz#cb35ba94fee2614d39736b7fa5381681b7aaf78c"
+koa-router@^7.2.1:
+  version "7.2.1"
+  resolved "http://registry.npm.taobao.org/koa-router/download/koa-router-7.2.1.tgz#b40a4ab3c6adb4b40895debd00a9c640304e3039"
   dependencies:
     debug "^2.2.0"
     http-errors "^1.3.1"
@@ -5224,9 +5223,9 @@ vue-loader@^12.2.1:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-router@^2.5.3:
-  version "2.5.3"
-  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.5.3.tgz#073783f564b6aece6c8a59c63e298dc2aabfb51b"
+vue-router@^2.6.0:
+  version "2.6.0"
+  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.6.0.tgz#77b271f6e0ac6d57e8e556da58c6582fce0ab712"
 
 vue-server-renderer@^2.3.4:
   version "2.3.4"
@@ -5351,9 +5350,9 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@^2.6.1:
-  version "2.6.1"
-  resolved "http://registry.npm.taobao.org/webpack/download/webpack-2.6.1.tgz#2e0457f0abb1ac5df3ab106c69c672f236785f07"
+webpack@2.6.0:
+  version "2.6.0"
+  resolved "http://registry.npm.taobao.org/webpack/download/webpack-2.6.0.tgz#7e650a92816abff5db5f43316b0b8b19b13d76c1"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
