@@ -1,7 +1,7 @@
 {
-  "name": "maybeul.com",
+  "name": "koa-vue-ssr-template",
   "version": "0.2.0",
-  "description": "a aggregation site of wechat subscription or article",
+  "description": "This template built with Vue 2.0, vue-router & vuex  with server-side rendering by koa",
   "main": "index.js",
   "author": "eteplus <eteplus@coderfun.com>",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "es6-promise": "^4.1.0",
-    "koa": "^2.2.0",
+    "koa": "^2.3.0",
     "koa-compress": "^2.0.0",
     "koa-favicon": "^2.0.0",
     "koa-router": "^7.2.1",
@@ -42,10 +42,10 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "^1.8.0",
     "eslint-plugin-html": "^3.0.0",
-    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-import": "^2.6.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -60,12 +60,16 @@
     "vue-ssr-webpack-plugin": "^3.0.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.3.4",
-    "webpack": "2.6.0",
+    "webpack": "^2.6.0",
     "webpack-bundle-analyzer": "^2.8.2",
-    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0",
     "webpack-node-externals": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eteplus/koa-vue-ssr-template.git"
   },
   "browserslist": [
     "> 1%",
