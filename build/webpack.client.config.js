@@ -37,6 +37,12 @@ const webpackClientConfig = merge(base, {
         : JSON.stringify(process.env.NODE_ENV || 'development'),
       'process.env.VUE_ENV': '"client"'
     }),
+    new VueSSRClientPlugin()
+  ]
+})
+
+if (isProd) {
+  webpackClientConfig.plugins.push(
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -54,14 +60,8 @@ const webpackClientConfig = merge(base, {
     // prevent vendor hash from being updated whenever app bundle is updated
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
-      // chunks: ['vendor']
+      chunks: ['vendor']
     }),
-    new VueSSRClientPlugin()
-  ]
-})
-
-if (isProd) {
-  webpackClientConfig.plugins.push(
     // auto generate service worker
     new SWPrecachePlugin({
       cacheId: 'maybeul',
@@ -96,6 +96,7 @@ if (isProd) {
 } else {
   webpackClientConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsPlugin()
   )

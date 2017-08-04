@@ -26,7 +26,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src')
-    }
+    },
+    modules: [resolve('src'), resolve('node_modules')]
   },
   module: {
     noParse: /es6-promise\.js$/, // avoid webpack shimming process
@@ -74,6 +75,8 @@ module.exports = {
   },
   plugins: isProd
   ? [
+    // Scope Hositing
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
@@ -82,11 +85,15 @@ module.exports = {
     new OptimizeCSSPlugin(),
     // minify JS
     new webpack.optimize.UglifyJsPlugin({
+      workers: require('os').cpus().length,
+      mangle: true,
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: true
       },
       sourceMap: true
     })
   ]
-  : []
+  : [
+  ]
 }
