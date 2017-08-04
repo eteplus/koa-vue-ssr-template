@@ -1,10 +1,28 @@
-@import './var.css';
-@import './colors.css';
-@import './status.css';
-
 .button {
-  @apply --button;
-
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0.8rem 1.6rem;
+  color: #444;
+  /* rgba not supported (IE 8) */
+  color: rgba(0, 0, 0, 0.80);
+  /* rgba supported */
+  border: 1px solid #999;
+  /*IE 6/7/8*/
+  border: none rgba(0, 0, 0, 0);
+  /*IE9 + everything else*/
+  background-color: #E6E6E6;
+  text-decoration: none;
+  border-radius: 4px;
   /* button[disabled] */
   &[disabled] {
     border: none;
@@ -15,36 +33,38 @@
     box-shadow: none;
     pointer-events: none;
   }
-
   /* button:focus */
   &:focus {
     outline: 0;
     filter: alpha(opacity=90);
-    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.10));
   }
-
   /* button:hover */
   &:hover {
     filter: alpha(opacity=90);
-    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.10));
   }
-
   /* button:active */
   &:active {
-    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
     border-color: #000;
   }
 }
 
-  /* Modifier */
 
-  /* button--active */
+/* Modifier */
+
+
+/* button--active */
+
 .button--active {
-  box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
   border-color: #000;
 }
 
+
 /* button--disabled */
+
 .button--disabled {
   border: none;
   background-image: none;
@@ -53,8 +73,9 @@
   cursor: not-allowed;
   box-shadow: none;
   pointer-events: none;
-
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     border: none;
     background-image: none;
     filter: alpha(opacity=40);
@@ -65,15 +86,19 @@
   }
 }
 
+
 /* button--hidden */
+
 .button--hidden {
   display: none;
 }
 
+
 /* button--hover */
+
 .button--hover {
   filter: alpha(opacity=90);
-  background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.10));
 }
 
 .button--xsmall {
@@ -92,84 +117,127 @@
   font-size: 125%;
 }
 
+
 /* button--round */
+
 .button--round {
-  @apply --button-round;
+  border-radius: 20px;
 }
+
 
 /* button--primary */
+
 .button--primary {
-  @apply --button-primary;
+  background-color: rgb(0, 120, 231);
+  color: #fff;
 }
+
 
 /* button--success */
+
 .button--success {
-  @apply --button-success;
+  background-color: rgb(28, 184, 65);
+  color: #fff;
 }
+
 
 /* button--error */
+
 .button--error {
-  @apply --button-error;
+  background-color: rgb(202, 60, 60);
+  color: #fff;
 }
+
 
 /* button--warning */
+
 .button--warning {
-  @apply --button-warning;
+  background-color: rgb(223, 117, 20);
+  color: #fff;
 }
+
 
 /* button--blue */
+
 .button--blue {
-  @apply --button-blue;
+  background: #e1f2fa;
+  color: #5992aa;
 }
+
 
 /* button--yellow */
+
 .button--yellow {
-  @apply --button-yellow;
+  background: #fcebbd;
+  color: #af9540;
 }
+
 
 /* button--black */
+
 .button--black {
-  @apply --button-black;
+  background: #333;
+  color: #fff;
 }
+
 
 /* button--green */
+
 .button--green {
-  @apply --button-green;
+  background: #d3eda3;
+  color: #72962e;
 }
+
 
 /* button--red */
+
 .button--red {
-  @apply --button-red;
+  background: #f5ab9e;
+  color: #8c3a2b;
 }
+
 
 /* button--purple */
+
 .button--purple {
-  @apply --button-purple;
+  background: #ddaeff;
+  color: #8156a7;
 }
+
 
 /* button--orange */
+
 .button--orange {
-  @apply --button-orange;
+  background: #f57b00;
+  color: #ffca95;
 }
 
+
 /* button--indigo */
+
 .button--indigo {
-  @apply --button-indigo;
+  background: #008ed4;
+  color: #fff;
 }
 
 
 /* button-group */
-.button-group {
 
-  @apply --button-group;
+.button-group {
+  letter-spacing: -0.496rem;
+  text-rendering: optimizespeed;
+  word-spacing: -0.688rem;
 
   & .button {
     letter-spacing: normal;
     word-spacing: normal;
     vertical-align: top;
     text-rendering: auto;
-
-    @apply --button-group-item;
+    margin: 0;
+    border-radius: 0;
+    border-right: 1px solid #111;
+    /* fallback color for rgba() for IE7/8 */
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
 
     &:first-child {
       border-top-left-radius: 2px;

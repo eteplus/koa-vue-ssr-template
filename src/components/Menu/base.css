@@ -1,31 +1,45 @@
-@import './var.css';
 .menu {
-  @apply --menu;
+  box-sizing: border-box;
 }
 
 
 /* menu__list */
 
 .menu__list {
-  @apply --list;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 
 /* menu__dropdown-list */
 
 .menu__dropdown-list {
-  @apply --dropdown-list;
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  background-color: #fff;
+  list-style-type: none;
+
 }
 
 
 /* menu__item */
 
 .menu__item {
-  @apply --item;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .menu__item--active {
-  @nest & .menu__link,
+  & .menu__link,
   & .menu__link:visited {
     background-color: #eee;
     color: #000;
@@ -33,9 +47,10 @@
 }
 
 .menu__item--disabled {
-  @apply --disabled;
+  opacity: .5;
+  padding: .8rem 1.6rem;
 
-  @nest & .menu__link:hover {
+  & .menu__link:hover {
     background-color: transparent;
     cursor: not-allowed;
   }
@@ -45,8 +60,13 @@
 /* menu__link */
 
 .menu__link {
-  @apply --link;
-  @nest &:hover,
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #777;
+  padding: .8rem 1.6rem;
+
+  &:hover,
   &:focus {
     background-color: #eee
   }
@@ -56,14 +76,21 @@
 /* menu__heading */
 
 .menu__heading {
-  @apply --heading;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #565d64;
+  padding: .8rem 1.6rem;
 }
 
 
 /* menu__separator */
 
 .menu__separator {
-  @apply --separator;
+  background-color: #ccc;
+  height: 1px;
+  margin: .48rem 0;
 }
 
 
@@ -72,21 +99,26 @@
 
 /* menu--fixed */
 .menu--fixed {
-  @apply --fixed;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3
 }
 
 
 /* menu--scrollable */
 .menu--scrollable {
-  @apply --scrollable;
-  @nest & .menu__list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  & .menu__list {
     display: block;
   }
 }
 
 .submenu {
   /* .submenu > .menu__link:after */
-  @nest &>.menu__link:after {
+  &>.menu__link:after {
     padding-left: 0.8rem;
     content: "\25B8";
     font-size: small;
@@ -95,14 +127,15 @@
 
 .submenu--active {
   background-color: #eee;
-  @nest &>.menu__dropdown-list {
+
+  &>.menu__dropdown-list {
     display: block;
     position: absolute;
   }
 }
 
 .submenu--allow-hover {
-  @nest &:hover>.menu__dropdown-list {
+  &:hover>.menu__dropdown-list {
     display: block;
     position: absolute;
   }
