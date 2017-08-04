@@ -1,6 +1,6 @@
 {
   "name": "koa-vue-ssr-template",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "This template built with Vue 2.0, vue-router & vuex  with server-side rendering by koa",
   "main": "index.js",
   "author": "eteplus <eteplus@coderfun.com>",
