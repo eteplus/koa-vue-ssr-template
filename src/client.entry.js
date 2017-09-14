@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle, consistent-return, array-callback-return */
 import 'es6-promise/auto'
 import Vue from 'vue'
-import { app, store, router } from './app'
+import { createApp } from './app'
 
 Vue.mixin({
   beforeRouteUpdate(to, from, next) {
@@ -16,6 +16,8 @@ Vue.mixin({
     }
   }
 })
+
+const { app, store, router } = createApp()
 
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.
@@ -43,16 +45,9 @@ router.onReady(() => {
     if (!asyncDataHooks.length) {
       return next()
     }
-    // Promise.all(activated.map((component) => {
-    //   if (component.asyncData) {
-    //     return component.asyncData({ store, route: to })
-    //   }
-    // }))
-    // .then(() => next())
-    // .catch(next)
     Promise.all(asyncDataHooks.map(hook => hook({ store, route: to })))
-    .then(() => next())
-    .catch(next)
+      .then(() => next())
+      .catch(next)
   })
 
   // actually mount to DOM
@@ -60,6 +55,6 @@ router.onReady(() => {
 })
 
 // service worker
-if (location.protocol === 'https:' && navigator.serviceWorker) {
+if (window.location.protocol === 'https:' && navigator.serviceWorker) {
   navigator.serviceWorker.register('/service-worker.js')
 }

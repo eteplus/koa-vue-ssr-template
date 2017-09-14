@@ -12,7 +12,7 @@ Requires Node.js 7+
 # install dependencies
 npm install # or yarn
 
-# serve in dev mode, with hot reload at localhost:3030
+# serve in dev mode, with hot reload at localhost:8080
 npm run dev
 
 # build for production

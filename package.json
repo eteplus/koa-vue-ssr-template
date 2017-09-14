@@ -20,6 +20,7 @@
     "koa": "^2.3.0",
     "koa-compress": "^2.0.0",
     "koa-favicon": "^2.0.0",
+    "koa-logger": "^3.0.1",
     "koa-router": "^7.2.1",
     "koa-static": "^4.0.1",
     "lru-cache": "^4.1.1",
@@ -71,10 +72,5 @@
     "type": "git",
     "url": "https://github.com/eteplus/koa-vue-ssr-template.git"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
   "license": "MIT"
 }

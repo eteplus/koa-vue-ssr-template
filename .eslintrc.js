@@ -27,6 +27,7 @@ module.exports = {
   'rules': {
     'global-require': 0,
     'no-param-reassign': 0,
+    'func-names': 0,
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
@@ -39,6 +40,8 @@ module.exports = {
     }],
     'semi': [2, 'never'],
     'comma-dangle': 0,
+    'prefer-promise-reject-errors': 0,
+    'import/prefer-default-export': 0,
     'no-console': 0,
     'no-plusplus': 0,
     'no-unused-vars': [2, { 'args': 'none' }],
