@@ -4,6 +4,9 @@ const Koa = require('koa')
 const favicon = require('koa-favicon')
 const compression = require('koa-compress')
 const logger = require('koa-logger')
+const bluebird = require('bluebird')
+
+global.Promise = bluebird
 
 const isProd = process.env.NODE_ENV === 'production'
 

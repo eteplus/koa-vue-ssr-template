@@ -46,7 +46,6 @@ module.exports = function (app) {
       // console.error('RENDER ERROR', error)
       if (error.url) {
         // fixed stream.push after EOF
-        // ctx.body.end()
         return ctx.redirect(error.url)
       } else if (error.code === 404) {
         ctx.status = 404
