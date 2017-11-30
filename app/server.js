@@ -5,6 +5,7 @@ const favicon = require('koa-favicon')
 const compression = require('koa-compress')
 const logger = require('koa-logger')
 const bluebird = require('bluebird')
+const chalk = require('chalk')
 
 global.Promise = bluebird
 
@@ -42,6 +43,10 @@ app.use((ctx, next) => {
 })
 
 const port = process.env.PORT || 8080
-app.listen(port, () => {
-  console.log(`server started at http://127.0.0.1:${port}`)
+app.listen(port, '127.0.0.1', () => {
+  console.log('\n--------- Started ---------')
+  console.log(chalk.bold('NODE_ENV:'), chalk.keyword('orange').bold(process.env.NODE_ENV || 'development'))
+  const url = `http://127.0.0.1:${port}`
+  console.log(chalk.bold('SERVER:'), chalk.blue.bold(url))
+  console.log('---------------------------\n')
 })
