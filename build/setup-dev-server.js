@@ -49,9 +49,12 @@ module.exports = function setupDevServer (app, cb) {
   const devMiddleware = require('webpack-dev-middleware')(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
     noInfo: true,
+    quiet: true,
     stats: {
       colors: true,
-      chunks: false
+      chunks: false,
+      modules: false,
+      assets: false
     }
   })
 
@@ -59,8 +62,8 @@ module.exports = function setupDevServer (app, cb) {
       end: (content) => {
         ctx.body = content
       },
-      setHeader: (name, value) => {
-        ctx.headers[name] = value
+      setHeader(){
+        ctx.set.apply(ctx, arguments)
       }
     }, next)
   )

@@ -75,8 +75,6 @@ module.exports = {
   },
   plugins: isProd
   ? [
-    // Scope Hositing
-    new webpack.optimize.ModuleConcatenationPlugin(),
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
@@ -92,8 +90,11 @@ module.exports = {
         drop_console: true
       },
       sourceMap: true
-    })
+    }),
+    // keep module.id stable when vender modules does not change
+    new webpack.HashedModuleIdsPlugin(),
+    // Scope Hositing
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ]
-  : [
-  ]
+  : []
 }
